@@ -4,13 +4,13 @@ const controller = {};
 
 controller.createPronostico = async (req, res, next) => {
   try {
-    const { humedad, temperatura, presion, luz, lluvia } = req.body;
+    const { humedad, temperatura, presion, luz, lluvia, dia } = req.body;
 
-    if (!humedad || !temperatura || !presion || !luz || !lluvia) {
+    if (!humedad || !temperatura || !presion || !luz || !lluvia || !dia) {
       return res.status(400).json({ message: 'Todos los datos son requeridos' });
     }
 
-    const pronostico = new PronosticoModel({ humedad, temperatura, presion, luz, lluvia });
+    const pronostico = new PronosticoModel({ humedad, temperatura, presion, luz, lluvia, dia });
 
     await PronosticoModel.create(pronostico);
 

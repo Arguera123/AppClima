@@ -21,6 +21,10 @@ const PronosticoSchema = new Schema({
   lluvia: {
     type: String,
     required: true,
+  },
+  dia: {
+    type: String,
+    required: true,
   }
 }, { timestamps: true });
 
